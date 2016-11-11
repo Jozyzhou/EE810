@@ -17,8 +17,8 @@ static bool UpdateState;// the state of the uodate processing, true means the pr
 //////////////////////// the struct of gradeInfo to post; 
 struct grade_info //define the single submission grades struct
 {
-    int Stu_ID;
-	string text_comment; //add a textual comment to the submission.
+    int Student_ID;
+        string Assignment_Comment; //add a textual comment to the submission.
 	bool   group_comment;//whether or not this comment should be sent to the entire group(defaults to false).ignored if this is not a group assignment or if no text_comment is provided.
 	//string media_comment_id//add an audio/video comment to the submission. media comments can be added via this api
 	//string media_comment_type//type of media comment being added.allow audio, video
@@ -37,7 +37,7 @@ private:
 	grade_info *gradeList;
 	int courseId;
 	int AssignmentsId;
-	int Stu_ID[100];
+        int Student_ID[100];
 	static string auth;//the taken access of Canvas
 	string update_Api;
 	int Post_size;
@@ -48,3 +48,4 @@ public:
 	void writeRequest(grade_info *gradeList,int Post_size);//write the request
 };
 
+#endif
